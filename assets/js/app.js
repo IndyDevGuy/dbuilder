@@ -8,6 +8,9 @@ const $ = require('jquery');
 // JS is equivalent to the normal "bootstrap" package
 // no need to set this to a variable, just require it
 require('bootstrap');
+require('jquery.easing');
+import ScrollReveal from 'scrollreveal'
+require('magnific-popup');
 require('../scss/global.scss');
 // any CSS you require will output into a single css file (app.css in this case)
 require('../css/app.css');
@@ -15,41 +18,93 @@ require('../css/app.css');
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // var $ = require('jquery');
 
-var navbarHeight = $('.navbar').height(); 
+(function($) {
+  "use strict"; // Start of use strict
+    // Smooth scrolling using jQuery easing
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html, body').animate({
+                  scrollTop: (target.offset().top - 56)
+                }, 1000, "easeInOutExpo");
+                return false;
+            }
+        }
+    });
+    
+    // Closes responsive menu when a scroll trigger link is clicked
+    $('.js-scroll-trigger').click(function() {
+      $('.navbar-collapse').collapse('hide');
+    });
 
-$(window).scroll(function() {
-  var navbarColor = "62,195,246";//color attr for rgba
-  var smallLogoHeight = $('.small-logo').height();
-  var bigLogoHeight = $('.big-logo').height();
-  
-  
-  var smallLogoEndPos = 0;
-  var smallSpeed = (smallLogoHeight / bigLogoHeight);
-  
-  var ySmall = ($(window).scrollTop() * smallSpeed); 
-  
-  var smallPadding = navbarHeight - ySmall;
-  if (smallPadding > navbarHeight) { smallPadding = navbarHeight; }
-  if (smallPadding < smallLogoEndPos) { smallPadding = smallLogoEndPos; }
-  if (smallPadding < 0) { smallPadding = 0; }
-  
-  $('.small-logo-container ').css({ "padding-top": smallPadding});
-  
-  var navOpacity = ySmall / smallLogoHeight; 
-  if  (navOpacity > 1) { navOpacity = 1; }
-  if (navOpacity < 0 ) { navOpacity = 0; }
-  var navBackColor = 'rgba(' + navbarColor + ',' + navOpacity + ')';
-  $('.navbar').css({"background-color": navBackColor});
-  
-  var shadowOpacity = navOpacity * 0.4;
-  if ( ySmall > 1) {
-    $('.navbar').css({"box-shadow": "0 2px 3px rgba(0,0,0," + shadowOpacity + ")"});
-  } else {
-    $('.navbar').css({"box-shadow": "none"});
-  }
-  
-  
-  
-});
+    // Activate scrollspy to add active class to navbar items on scroll
+    $('body').scrollspy({
+      target: '#mainNav',
+      offset: 57
+    });
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+    // Collapse Navbar
+    var navbarCollapse = function() {
+      if ($("#mainNav").offset().top > 100) {
+        $("#mainNav").addClass("navbar-shrink");
+      } else {
+        $("#mainNav").removeClass("navbar-shrink");
+      }
+    };
+    // Collapse now if page is not at top
+    navbarCollapse();
+    // Collapse the navbar when page is scrolled
+    $(window).scroll(navbarCollapse);
+
+    // Scroll reveal calls
+    window.sr = ScrollReveal();
+
+    sr.reveal('.sr-icon-1', {
+      delay: 200,
+      scale: 0
+    });
+    sr.reveal('.sr-icon-2', {
+      delay: 400,
+      scale: 0
+    });
+    sr.reveal('.sr-icon-3', {
+      delay: 600,
+      scale: 0
+    });
+    sr.reveal('.sr-icon-4', {
+      delay: 800,
+      scale: 0
+    });
+    sr.reveal('.sr-button', {
+      delay: 200,
+      distance: '15px',
+      origin: 'bottom',
+      scale: 0.8
+    });
+    sr.reveal('.sr-contact-1', {
+      delay: 200,
+      scale: 0
+    });
+    sr.reveal('.sr-contact-2', {
+      delay: 400,
+      scale: 0
+    });
+    
+    // Magnific popup calls
+    $('.popup-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        tLoading: 'Loading image #%curr%...',
+        mainClass: 'mfp-img-mobile',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1]
+        },
+        image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+        }
+    });
+})(jQuery); // End of use strict

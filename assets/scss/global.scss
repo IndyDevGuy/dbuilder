@@ -11,13 +11,17 @@ and open the template in the editor.
 // assets/css/global.scss
 
 // customize some Bootstrap variables
-$navbar-height: 50px;
+$navbar-height: 20px;
 $big-logo-padding: 15px; // adjust these 2 values
 $small-logo-padding: 2px; // of bottom padding to look nice
 $navbar-dark-color: #888;
-$bg-dark: #6c4998;
+$primary: #6c4998;
 // the ~ allows you to reference things in node_modules
+@import "creative.scss";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~bootstrap/scss/bootstrap";
+@import "~magnific-popup/dist/magnific-popup.css";
 
 /* *********************************
    Some Style Overrides on Bootstrap
@@ -57,6 +61,7 @@ ul.nav {
     height: $navbar-height;
     overflow: hidden;
     position: absolute;
+    background-color:#7851a9;
   }
 
 .small-logo {
@@ -69,7 +74,7 @@ ul.nav {
            Big Logo
   ********************************** */
 .big-logo-row {
-  background: #6c4998;
+  background: #7851a9;
   
   .big-logo-container {
     padding-top: $navbar-height;
