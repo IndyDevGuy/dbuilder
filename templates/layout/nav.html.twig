@@ -17,7 +17,7 @@
                     <a class="nav-link js-scroll-trigger" href="#services">How It Works</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+                    <a class="nav-link js-scroll-trigger" href="#seven_seas">Seven C's</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#guy-east">About The Founder</a>
@@ -28,4 +28,14 @@
             </ul>
         </div>
     </div>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{label}} alert-dismissible" role="alert" style="position:fixed; top:100px;">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
   </nav>

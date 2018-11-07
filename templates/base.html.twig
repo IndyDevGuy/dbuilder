@@ -1,37 +1,60 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128577522-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-128577522-1');
+        </script>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <title>{% block title %}Welcome!{% endblock %} | Disciple Builder</title>
         {% block stylesheets %}
             <link href="{{ asset('build/app.css') }}" rel="stylesheet">
         {% endblock %}
         
         
     </head>
-    <body id='page-top'>
-        
-        
-        <!-- Navigation -->
-        {{ include('layout/nav.html.twig') }}
-        <!-- Header -->
-        {{ include('layout/header.html.twig') }}
-        <!--About section -->
-        {{ include('layout/sections/about-section.html.twig')}}
-        <!-- Services section -->
-        {{ include('layout/sections/services-section.html.twig') }}
-        <!-- Portfolio section -->
-        {{ include('layout/sections/portfolio-section.html.twig') }}
-        <!-- GuyEast section -->
-        {{ include('layout/sections/guyeast-section.html.twig') }}
-        
+    <body id='page-top' class="{% block bodyClass %}{% endblock %}">
+        {% block navBar %}
+            <!-- Navigation -->
+            {{ include('layout/nav.html.twig') }}
+        {% endblock %}
+        {% block header %}
+            <!-- Header -->
+            {{ include('layout/header.html.twig') }}
+        {% endblock %}
+        {% block about %}
+            <!--About section -->
+            {{ include('layout/sections/about-section.html.twig')}}
+        {% endblock %}
+        {% block services %}
+            <!-- Services section -->
+            {{ include('layout/sections/services-section.html.twig') }}
+        {% endblock %}
+        {% block portfolio %}
+            <!-- Portfolio section -->
+            {{ include('layout/sections/portfolio-section.html.twig') }}
+        {% endblock %}
+        {% block founder %}
+            <!-- GuyEast section -->
+            {{ include('layout/sections/guyeast-section.html.twig') }}
+        {% endblock %}    
         <!-- Main body block -->
         {% block body %}{% endblock %}
         
-        <!-- Contact section -->
-        {{ include('layout/sections/contact-section.html.twig') }}
-        
+        {% block contact %}
+            <!-- Contact section -->
+            {{ include('layout/sections/contact-section.html.twig') }}
+        {% endblock %} 
+        {% block modal %}
+        {% endblock %}
         <!-- Javascript block -->
         {% block javascripts %}
             <script src="{{ asset('build/app.js') }}"></script>

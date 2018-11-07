@@ -5,6 +5,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    parameters:
+    resumes_directory: '%kernel.project_dir%/public/uploads/resumes'
 
 services:
     # default configuration for services in *this* file
@@ -29,3 +31,16 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Form\Type\CKEditorType:
+        class: App\Form\Type\CKEditorType
+        tags: [form.type]
+        autowire: false
+        autoconfigure: false
+        arguments:
+            - '@twig'
+            - '@event_dispatcher'
+            
+    App\EventListener\ControllerListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, priority: 0 }
+        autowire: true

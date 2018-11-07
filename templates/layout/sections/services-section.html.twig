@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">How It Works</h2>
+                <h2 class="section-heading">{{config.workstitle}}</h2>
                 <hr class="my-4">
             </div>
         </div>
@@ -10,9 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <p>God provides a platform to everyone so that they can find comfort, boldness, and courage as they Love Others and Make Disciples. This platform comes in many ways. To some the platform is on a playing field, to others, it’s in a sanctuary. Wherever you find yourself, that’s your platform God has given you. It doesn’t have to be glamorous. It can be in the dirty alley’s of a big city. It can be in the jungles of the primitive. For the Disciple Builder, the platform is on a construction project jobsite. It’s a perfect metaphor. Just like a building starts out with a hole dug in the ground to prepare for a foundation, Disciple Builder begins with it’s own foundation, and builds little by little, day by day, just like a building construction project becomes a finished home or building.
-                   <br /><br /> There are three aspects of the Disciple Builder, each of which incorporates an increasing investment of time.
-                   <br />Observing, Interpreting and Living are the three core tenants of the Disciple Builder. Termed “O-I-L” for short, Observing, Interpreting and Living questions need to be constantly churning in our spiritual minds as we see a bible passage, think about what it says, and then overlay that verse within our life to alter change.</p>
+                {{config.worksdescriptionshort|raw}} <a href="#" data-toggle="modal" aria-hidden="true" data-target="#worksModal">Read More</a>
             </div>
         </div>
     </div>
@@ -23,7 +21,7 @@
                     <!-- <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i> -->
                     <img src="{{ asset('images/template/bible.png') }}" alt="Observing God's Word" width="150" />
                     <h3 class="mb-3">Observing</h3>
-                    <p class="text-muted mb-0">Observing God’s Word by asking Who, What, Where, When and How lay the basic foundation on which to build upon and for further understanding of God’s purpose for your life. It’s as simple as reading a bible verse, paragraph or parable, and asking the basic questions that the text is referencing.</p>
+                    <p class="text-muted mb-0">{{config.worksobserving}}</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 text-center">
@@ -31,7 +29,7 @@
                     <!-- <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i> -->
                     <img src="{{ asset('images/template/thinking-man-statue.png') }}" alt="Interpreting" width="150" />
                     <h3 class="mb-3">Interpreting</h3>
-                    <p class="text-muted mb-0">Interpreting God’s Word digs deeper into the question by asking what is God saying within the words. What’s the deeper message He is trying to get across.</p>
+                    <p class="text-muted mb-0">{{config.worksinterpreting}}</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 text-center">
@@ -39,9 +37,27 @@
                     <!-- <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i> -->
                     <img src="{{ asset('images/template/hardhatandtools.png') }}" alt="Living" width="150" />
                     <h3 class="mb-3">Living</h3>
-                    <p class="text-muted mb-0">Living God’s Word is where the application process occurs and is where the true testing of one’s faith through the crucible of life is fortified. This is where transformation of one’s life begins to be seen from outsiders.</p>
+                    <p class="text-muted mb-0">{{config.worksliving}}</p>
                 </div>
             </div>
         </div>
     </div>
   </section>
+<div class="modal" id="worksModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">How It Works</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{config.worksdescription|raw}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

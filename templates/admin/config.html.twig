@@ -1,0 +1,218 @@
+{% extends 'admin-base.html.twig' %}
+
+{% block title %}Site Configuration{% endblock %}
+
+{% block stylesheets %}{{parent()}}{% endblock %}
+{% block breadcrumbs %}
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Site Configuration</li>
+    </ol>
+{% endblock %}
+{% block body %}
+    <form class="shake" action="/admin/config" method="post">
+        <div class="card mb-3">
+            <div class="card-header">
+                Basic Site Settings
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Site Email</span>
+                    </div>
+                    {{form_widget(form.email)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Site Phone Number</span>
+                    </div>
+                    {{form_widget(form.phone)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Site Title</span>
+                    </div>
+                    {{form_widget(form.title)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Header Title</span>
+                    </div>
+                    {{form_widget(form.header_title)}}
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Basic site settings</div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                About Settings
+            </div>
+            
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">About Title</span>
+                    </div>
+                    {{form_widget(form.about_title)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">About Description</span>
+                    </div>
+                    {{form_widget(form.about_description)}}
+                </div>
+            </div>
+            <div class="card-footer small text-muted">About settings</div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                How It Works Settings
+            </div>
+            
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">How It Works Title</span>
+                    </div>
+                    {{form_widget(form.works_title)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">How It Works Description</span>
+                    </div>
+                    {{form_widget(form.works_description)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Observing Description</span>
+                    </div>
+                    {{form_widget(form.works_observing)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Interpreting Description</span>
+                    </div>
+                    {{form_widget(form.works_interpreting)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Living Description</span>
+                    </div>
+                    {{form_widget(form.works_living)}}
+                </div>
+                
+            </div>
+            <div class="card-footer small text-muted">How it works settings</div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                Seven C's Settings
+            </div>
+            
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Seven C's Title</span>
+                    </div>
+                    {{form_widget(form.seven_title)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Confering Description</span>
+                    </div>
+                    {{form_widget(form.seven_confering)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Creating Description</span>
+                    </div>
+                    {{form_widget(form.seven_creating)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Capitalizing Description</span>
+                    </div>
+                    {{form_widget(form.seven_capitalizing)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Contracting Description</span>
+                    </div>
+                    {{form_widget(form.seven_contracting)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Constructing Description</span>
+                    </div>
+                    {{form_widget(form.seven_constructing)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Celebrating Description</span>
+                    </div>
+                    {{form_widget(form.seven_celebrating)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Community Description</span>
+                    </div>
+                    {{form_widget(form.seven_community)}}
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Seven C's settings</div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                Founder Settings
+            </div>
+            
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Founder's Name</span>
+                    </div>
+                    {{form_widget(form.founder_name)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">About The Founder</span>
+                    </div>
+                    {{form_widget(form.founder_description)}}
+                </div>
+                
+            </div>
+            <div class="card-footer small text-muted">Founder settings</div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                Contact Settings
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Contact Title</span>
+                    </div>
+                    {{form_widget(form.contact_title)}}
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Contact Body</span>
+                    </div>
+                    {{form_widget(form.contact_description)}}
+                </div>
+                
+            </div>
+            <div class="card-footer small text-muted">Contact settings</div>
+        </div>
+        {{form_widget(form.submit)}}
+        {{form_widget(form._token)}}
+    </form>
+{% endblock %}

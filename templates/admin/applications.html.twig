@@ -1,0 +1,64 @@
+{% extends 'admin-base.html.twig' %}
+
+{% block title %}Site Applications{% endblock %}
+
+{% block stylesheets %}{{parent()}}{% endblock %}
+{% block breadcrumbs %}
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/admin">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">
+            Applications
+        </li>
+    </ol>
+{% endblock %}
+{% block body %}
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-file-invoice"></i>
+    Newest Applications</div>
+    <div class="card-body">
+        
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Resume</th>
+                    <th scope="col">How many construction projects have you been involved in? (Describe)</th>
+                    <th scope="col">What where your role(s) within these projects? (Optional)</th>
+                    <th scope="col">How did you hear about Disciple Builder? (Optional)</th>
+                    <th scope="col">If Other please describe: (Optional)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for application in applications %}
+                    <tr>
+                        <th scope="row">{{loop.index}}</th>
+                        <td>{{application.email}}</td>
+                        <td>{{application.firstname}}</td>
+                        <td>{{application.lastname}}</td>
+                        <td>{{application.address}}, {{application.country}}</td>
+                        <td><a target="_blank" href="{{ vich_uploader_asset(application, 'resumeFile') }}">{{application.firstname}}'s Resume</a></td>
+                        <td>{{application.q1}}</td>
+                        <td>{{application.q2}}</td>
+                        <td>{{application.q3}}</td>
+                        <td>{{application.q4}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer small text-muted">Showing new Applications</div>
+</div>
+
+{% endblock %}
+
+{% block contact %}{% endblock %}

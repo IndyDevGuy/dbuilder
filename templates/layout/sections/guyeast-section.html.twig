@@ -2,22 +2,30 @@
     <div class="container text-left">
         <div class="col-md-12">
             <blockquote class="blockquote">
-            <img class="img-responsive float-left" src="{{ asset('images/template/blank_user.png') }}" width="30%">
-            
-            <h2>About the Founder: Guy East</h2>
-                    
-            <p>Building is all I’ve ever done. Building is in my blood, as at least three generations of building before me, is in my ancestor’s legacy. The joy that I receive from being involved with a building project, from conception to completion, never gets old to me. I believe that God, through his own example of Creation, has given man, starting on Day 6 of the Creation process, the responsibility of overseeing God’s own creation. He also gives the gift of creativity to mankind, as in the example of the Old Testament’s Bezalel.</p>
-            <p>I’ve walked with Christ since 1983, when I realized that carrying the burden of life, and all that comes with it, was too much for me to bear on my own. I surrendered my life to Christ atop the foothills of Cincinnati, Ohio, married just 3 months, overloaded with pressure from building the Procter &amp; Gamble World Headquarters, and after watching Billy Graham’s movie “Prodigal Son”. Since that time, God has taken me through some amazing journey’s. Some very difficult, some very exciting. But through the process of “working out my faith”, I’ve learned to trust God more and more every day.</p>
-            <p>Beginning on January 1, 2018, while visiting Washington DC for the holidays, and to tour the newly opened Museum of the Bible, God called me to begin reading the bible, something that I’d done since 1983, but this time, to intensively study God’s Word, word by word, sentence by sentence, paragraph by paragraph, chapter by chapter, and book by book, THROUGH THE LENS OF A BUILDER! Wow! I’d never thought of reading the bible from that perspective! From Day 1 until the end (I completed my study on September 20, 2018), I was fascinated, every morning, to read the 4 chapters that awaited me, a simple-minded builder from Indiana.</p>
-            <p>During my time reading and studying God’s Word, I was continually motivated, inspired, and renewed in all ways to be an intentional man of God. And specifically, when summarizing God’s Word simply, I know now, clearer now more than ever, that God’s chosen are to do these two things, love others, and make disciples. The Great Commandment tells us to Love Others. The Great Commission tells us to Make Disciples.</p>
-            <p>I’m 58 years old. God has blessed me with a wife of 35 years, and 5 children and 3, soon to be 4, grandchildren. Time is short. On May 10, I broke my neck and experienced a Near Death experience. On August 21, I totaled my car and the one I hit. On September 9, I feel down the stairs, learning later that over 12,000 people die each year of the same thing I survived. Time is short. It is too precious to waste any longer. God has my full attention now! And I feel this urgency now more than ever to Love Others and to Make Disciples.</p>
-            <p>The Disciple Builder, is a compilation and assortment of my thousands of notes taken daily through my study of God’s precious Word, and in my study of his holy bible. Disciple Builder is for every interested person who wants to grow closer to God. It’s especially directed towards the person who loves creativity and building and using their hands, the person who works diligently, day after day, toiling away on this project or that project, who sees the daily fruit of his labor at sunset. As one travels through the many building stories and metaphors that God has given us in his story, the heart of a disciple will develop and will continue to grow more and more each day. The “making of a disciple” process has begins simultaneously with the observing, interpreting and applying God’s word. And once a new disciple is born, his or her enthusiasm to share boldly and courageously the good news will catch on like wildfire.</p>
-            <p>Time is short for us all. If you’re not interested in what God has in store for you, that’s right, fill in the blank, which is your very own name, WHY NOT? God has given each of us so much, but like I once experienced, we fail to accept his gifts. WHY? Why is it that every single person who has ever walked this planet, has had to ask the question, “Why do I exist”, “what’s my purpose on life”, and “Why should I turn over control of my life to some invisible so-called power”. The answer to those questions is where the rubber of our hearts meets the road of life. The very freedom that we think we are giving up, is the very freedom that we can never get ourselves, that is, unless we turn control over to Jesus Christ. The moment we relinguish control, is the very moment that we become free!</p>
-            <p>Give much thought to this question. WHY NOT learn about GOD? Why not know God better than I do now?</p>
-            <p>The bible is all we need to get started, and even without a bible, we have his Holy Spirit. So begin right now, and ask God to open your eyes to his wonder, and see what happens next. Close your eyes. And now Ask God to Open the eyes of your heart.</p>
-            <p>And if you so feel inspired, after that, to see his world from the perspective of a working man, a builder, a craftsman, etc., then open up the Disciple Builder program, and see if God speaks to you, like he did (does) to me, from the lens of a builder. He loves you so much, that his love letter, his bible, to you is that personal. Start today. Start right now. Be a Disciple Builder!</p>
-            <footer class="blockquote-footer">Guy East October 20, 2018</footer>
+                <div class="col-sm-4">
+                    <img class="img-responsive img-thumbnail float-left" src="{{ asset('images/template/guy_east.png') }}" style="margin-right:15px;">
+                </div>
+                <h1>About The Founder: {{config.foundertitle}}</h1>
+                {{config.founderdescriptionshort | raw}} <a style="color:#fff;" href="#" data-toggle="modal" aria-hidden="true" data-target="#guyModal">Read More</a>
             </blockquote>
         </div>
     </div>
 </section>
+<div class="modal" id="guyModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">About The Founder: Guy East</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{config.founderdescription|raw}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

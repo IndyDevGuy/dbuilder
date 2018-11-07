@@ -1,0 +1,5 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block title %}Register{% endblock %}
+{% block stylesheets %}{{parent()}}<link href="{{ asset('build/register.css') }}" rel="stylesheet">{% endblock %}
+{% block body %}{% include "@FOSUser/Registration/register_content.html.twig" %}{% endblock %}
+{% block javascripts %}<script src="{{ asset('build/register.js') }}"></script>{% endblock %}

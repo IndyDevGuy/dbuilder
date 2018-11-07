@@ -1,0 +1,5 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block title %}Login{% endblock %}
+{% block stylesheets %}{{parent()}}<link href="{{ asset('build/login.css') }}" rel="stylesheet">{% endblock %}
+{% block body %}{{ include('@FOSUser/Security/login_content.html.twig') }}{% endblock %}
+{% block javascripts %}<script src="{{ asset('build/login.js') }}"></script>{% endblock %}

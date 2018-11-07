@@ -1,0 +1,53 @@
+{% extends 'admin-base.html.twig' %}
+
+{% block title %}Information Requests{% endblock %}
+
+{% block stylesheets %}{{parent()}}{% endblock %}
+{% block breadcrumbs %}
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/admin">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">
+            Information Requests
+        </li>
+    </ol>
+{% endblock %}
+
+{% block body %}
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-file-invoice"></i>
+    Newest Information Requests</div>
+    <div class="card-body">
+        
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request in requests %}
+                    <tr>
+                        <th scope="row">{{loop.index}}</th>
+                        <td>{{request.email}}</td>
+                        <td>{{request.firstname}}</td>
+                        <td>{{request.lastname}}</td>
+                        <td>{{request.address}}, {{request.country}}, {{request.zip}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer small text-muted">Showing new Applications</div>
+</div>
+
+{% endblock %}
